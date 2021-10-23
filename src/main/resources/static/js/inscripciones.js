@@ -2,7 +2,12 @@
 $(document).ready(function() {
   cargarInscripciones();
   $('#usuarios').DataTable();
+  actualizarEmailDelUsuario();
 });
+
+function actualizarEmailDelUsuario() {
+    document.getElementById('txtUsuario').outerHTML = localStorage.email;
+}
 
 async function cargarInscripciones() {
   const request = await fetch('api/inscripciones', {
