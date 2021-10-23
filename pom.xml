@@ -11,6 +11,7 @@
 	<groupId>com.proyecto</groupId>
 	<artifactId>proyecto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>proyecto</name>
 	<description>proyectopJava</description>
 	<properties>
