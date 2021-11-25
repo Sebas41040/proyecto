@@ -72,7 +72,7 @@ let datos = {};
     },
     body: JSON.stringify(datos)
   });
-  alert("La Inscripción fue moficicada con exito!");
+  alert("La Inscripción fue modificada con exito!");
   window.location.href = 'pginscripciones.html';
 
 function validar() {
