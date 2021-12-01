@@ -1,7 +1,13 @@
 package com.proyecto.controller;
 
+<<<<<<< HEAD
 
 
+=======
+import com.proyecto.dao.InscripcionDao;
+import com.proyecto.model.Inscripcion;
+import com.proyecto.utils.JWTUtil;
+>>>>>>> 8308ea6dccf8bd8037c400e096cabaff4bb60aca
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
