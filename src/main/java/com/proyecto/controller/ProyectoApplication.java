@@ -1,4 +1,4 @@
-package com.proyecto.utils.controller;
+package com.proyecto.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

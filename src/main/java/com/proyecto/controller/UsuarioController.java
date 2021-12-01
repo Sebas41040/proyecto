@@ -1,4 +1,4 @@
-package com.proyecto.utils.controller;
+package com.proyecto.controller;
 
 
 import com.proyecto.dao.UsuarioDao;
