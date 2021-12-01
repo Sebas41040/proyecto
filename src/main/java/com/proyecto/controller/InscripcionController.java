@@ -1,11 +1,7 @@
 package com.proyecto.controller;
 
-import com.proyecto.dao.InscripcionDao;
-import com.proyecto.model.Inscripcion;
-import com.proyecto.model.Usuario;
-import com.proyecto.utils.JWTUtil;
-import de.mkammerer.argon2.Argon2;
-import de.mkammerer.argon2.Argon2Factory;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

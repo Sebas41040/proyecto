@@ -1,9 +1,7 @@
 package com.proyecto.controller;
 
 
-import com.proyecto.dao.UsuarioDao;
-import com.proyecto.model.Usuario;
-import com.proyecto.utils.JWTUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
