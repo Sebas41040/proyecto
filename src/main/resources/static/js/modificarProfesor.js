@@ -76,6 +76,7 @@ async function modificarProfesor() {
     window.location.href = 'pgprofesor.html';
 
     function validar() {
+        const DATE_REGEX = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/
         if ($('#txtciprofesor').val().length == 0) {
             alert('Campo Obligatorio, por favor ingrese el Ci del Profesor');
             return false;
@@ -99,6 +100,14 @@ async function modificarProfesor() {
         if ($('#txtfechingreso').val().length == 0) {
             alert('Campo Obligatorio, por favor ingrese la fecha de ingreso del Profesor');
             return false;
+        }
+        if (!$('#txtfechanac').val().match(DATE_REGEX)) {
+            alert('Fecha de Nacimiento Inválida, Ingrese Fecha DD/MM/AAAA o Fecha fuera de rango');
+            return false
+        }
+        if (!$('#txtfechingreso').val().match(DATE_REGEX)) {
+            alert('Fecha de Ingreso Inválida, Ingrese Fecha DD/MM/AAAA o Fecha fuera de rango');
+            return false
         }
         return true
     }

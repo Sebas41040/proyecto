@@ -75,27 +75,34 @@ let datos = {};
   alert("El alumno fue modificado con exito!");
   window.location.href = 'pgalumno.html';
 
-function validar() {
-  if ($('#txtcialumno').val().length == 0) {
-      alert('Campo Obligatorio, por favor ingrese el Ci del Alumno');
-      return false;
-  }
-  if ($('#txtnombre').val().length == 0) {
-        alert('Campo Obligatorio, por favor ingrese el nombre del Alumno');
-        return false;
-  }
-  if ($('#txtapellido').val().length == 0) {
-    alert('Campo Obligatorio, por favor ingrese el apellido del Alumno');
-    return false;
-  }
-  if ($('#txtdireccion').val().length == 0) {
-      alert('Campo Obligatorio, por favor ingrese la direccion del Alumno');
-      return false;
-  }
-  if ($('#txtfecha_nacimiento').val().length == 0) {
-      alert('Campo Obligatorio, por favor ingrese la fecha de nacimiento del alumno');
-      return false;
-  }
-    return true
-}
+    function validar() {
+
+        const DATE_REGEX = /^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$/
+
+        if ($('#txtcialumno').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el Ci del Alumno');
+            return false;
+        }
+        if ($('#txtnombre').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el nombre del Alumno');
+            return false;
+        }
+        if ($('#txtapellido').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el apellido del Alumno');
+            return false;
+        }
+        if ($('#txtdireccion').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese la direccion del Alumno');
+            return false;
+        }
+        if ($('#txtfecha_nacimiento').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese la fecha de nacimiento del Alumno');
+            return false;
+        }
+        if (!$('#txtfecha_nacimiento').val().match(DATE_REGEX)){
+            alert('Formato Inválido, Ingrese Fecha DD/MM/AAAA o Fecha fuera de rango') ;
+            return false
+        }
+        return true
+    }
 }
