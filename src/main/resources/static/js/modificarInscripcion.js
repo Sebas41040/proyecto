@@ -1,7 +1,7 @@
 // Call the dataTables jQuery plugin
-$(document).ready(function() {
-  console.log("pagina cargada!");
-  console.log("buscamos los datos a editar!");
+$(document).ready(function () {
+    console.log("pagina cargada!");
+    console.log("buscamos los datos a editar!");
 
     var idInscripcion = getUrlParameter('idInscripcion');
 
@@ -11,8 +11,8 @@ $(document).ready(function() {
 });
 
 /**
-Metodo que devuelve el valor de un parametro definido en la URL
-**/
+ Metodo que devuelve el valor de un parametro definido en la URL
+ **/
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -31,71 +31,89 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 async function editarInscripcion(id_inscripcion) {
 
-  const request = await fetch('api/inscripciones/editar/'+id_inscripcion, {
-    method: 'GET',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
-  });
+    const request = await fetch('api/inscripciones/editar/' + id_inscripcion, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    });
 
-  const inscripcionEdit = await request.json();
+    const inscripcionEdit = await request.json();
 
-  // '{"id_inscripcion":14,"cialumno":123,"ciprofesor":456,"materia":"Java","duracion":12,"costo":5000}'
+    // '{"id_inscripcion":14,"cialumno":123,"ciprofesor":456,"materia":"Java","duracion":12,"costo":5000}'
 
-  $("#txtidinscripcion").val(inscripcionEdit.id_inscripcion);
-  $("#txtcialumno").val(inscripcionEdit.cialumno);
-  $("#txtciprofesor").val(inscripcionEdit.ciprofesor);
-  $("#txtmateria").val(inscripcionEdit.materia);
-  $("#txtduracion").val(inscripcionEdit.duracion);
-  $("#txtcosto").val(inscripcionEdit.costo);
+    $("#txtidinscripcion").val(inscripcionEdit.id_inscripcion);
+    $("#txtcialumno").val(inscripcionEdit.cialumno);
+    $("#txtciprofesor").val(inscripcionEdit.ciprofesor);
+    $("#txtmateria").val(inscripcionEdit.materia);
+    $("#txtduracion").val(inscripcionEdit.duracion);
+    $("#txtcosto").val(inscripcionEdit.costo);
+    $("#txttipdescuento").val(inscripcionEdit.tipdescuento);
+    $("#txtpordescuento").val(inscripcionEdit.pordescuento);
+    $("#txtaplidescuento").val(inscripcionEdit.aplidescuento);
 }
 
 async function modificarInscripcion() {
-let datos = {};
-  datos.id_inscripcion = $("#txtidinscripcion").val();
-  datos.cialumno = document.getElementById('txtcialumno').value;
-  datos.ciprofesor = document.getElementById('txtciprofesor').value;
-  datos.materia = document.getElementById('txtmateria').value;
-  datos.duracion = document.getElementById('txtduracion').value;
-  datos.costo = document.getElementById('txtcosto').value;
+    let datos = {};
+    datos.id_inscripcion = $("#txtidinscripcion").val();
+    datos.cialumno = document.getElementById('txtcialumno').value;
+    datos.ciprofesor = document.getElementById('txtciprofesor').value;
+    datos.materia = document.getElementById('txtmateria').value;
+    datos.duracion = document.getElementById('txtduracion').value;
+    datos.costo = document.getElementById('txtcosto').value;
+    datos.tipdescuento = document.getElementById('txttipdescuento').value;
+    datos.pordescuento = document.getElementById('txtpordescuento').value;
+    datos.aplidescuento = document.getElementById('txtaplidescuento').value;
 
-  if(validar() == false){
-    return;
+    if (validar() == false) {
+        return;
     }
 
-  const request = await fetch('api/inscripciones/modificar', {
-    method: 'PUT',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(datos)
-  });
-  alert("La Inscripción fue modificada con exito!");
-  window.location.href = 'pginscripciones.html';
+    const request = await fetch('api/inscripciones/modificar', {
+        method: 'PUT',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datos)
+    });
+    alert("La Inscripción fue modificada con exito!");
+    window.location.href = 'pginscripciones.html';
 
-function validar() {
-  if ($('#txtcialumno').val().length == 0) {
-      alert('Campo Obligatorio, por favor ingrese el Ci del Alumno');
-      return false;
-  }
-  if ($('#txtciprofesor').val().length == 0) {
-        alert('Campo Obligatorio, por favor ingrese el Ci del Profesor');
-        return false;
-  }
-  if ($('#txtmateria').val().length == 0) {
-    alert('Campo Obligatorio, por favor ingrese la Materia');
-    return false;
-  }
-  if ($('#txtduracion').val().length == 0) {
-      alert('Campo Obligatorio, por favor ingrese la Duración');
-      return false;
-  }
-  if ($('#txtcosto').val().length == 0) {
-      alert('Campo Obligatorio, por favor ingrese el Costo');
-      return false;
-  }
-    return true
-}
+    function validar() {
+        if ($('#txtcialumno').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el Ci del Alumno');
+            return false;
+        }
+        if ($('#txtciprofesor').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el Ci del Profesor');
+            return false;
+        }
+        if ($('#txtmateria').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese la Materia');
+            return false;
+        }
+        if ($('#txtduracion').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese la Duración');
+            return false;
+        }
+        if ($('#txtcosto').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el Costo');
+            return false;
+        }
+        if ($('#txttipdescuento').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el Tipo de Descuento');
+            return false;
+        }
+        if ($('#txtpordescuento').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese el Porcentaje del Descuento');
+            return false;
+        }
+        if ($('#txtaplidescuento').val().length == 0) {
+            alert('Campo Obligatorio, por favor ingrese si aplica el descuento');
+            return false;
+        }
+        return true
+    }
 }
