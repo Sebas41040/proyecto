@@ -49,9 +49,6 @@ async function editarInscripcion(id_inscripcion) {
     $("#txtmateria").val(inscripcionEdit.materia);
     $("#txtduracion").val(inscripcionEdit.duracion);
     $("#txtcosto").val(inscripcionEdit.costo);
-    $("#txttipdescuento").val(inscripcionEdit.tipdescuento);
-    $("#txtpordescuento").val(inscripcionEdit.pordescuento);
-    $("#txtaplidescuento").val(inscripcionEdit.aplidescuento);
 }
 
 async function modificarInscripcion() {
@@ -62,9 +59,6 @@ async function modificarInscripcion() {
     datos.materia = document.getElementById('txtmateria').value;
     datos.duracion = document.getElementById('txtduracion').value;
     datos.costo = document.getElementById('txtcosto').value;
-    datos.tipdescuento = document.getElementById('txttipdescuento').value;
-    datos.pordescuento = document.getElementById('txtpordescuento').value;
-    datos.aplidescuento = document.getElementById('txtaplidescuento').value;
 
     if (validar() == false) {
         return;
@@ -100,18 +94,6 @@ async function modificarInscripcion() {
         }
         if ($('#txtcosto').val().length == 0) {
             alert('Campo Obligatorio, por favor ingrese el Costo');
-            return false;
-        }
-        if ($('#txttipdescuento').val().length == 0) {
-            alert('Campo Obligatorio, por favor ingrese el Tipo de Descuento');
-            return false;
-        }
-        if ($('#txtpordescuento').val().length == 0) {
-            alert('Campo Obligatorio, por favor ingrese el Porcentaje del Descuento');
-            return false;
-        }
-        if ($('#txtaplidescuento').val().length == 0) {
-            alert('Campo Obligatorio, por favor ingrese si aplica el descuento');
             return false;
         }
         return true

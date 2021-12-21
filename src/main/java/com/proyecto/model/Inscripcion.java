@@ -30,14 +30,4 @@ public class Inscripcion {
 
     @Getter @Setter @Column(name = "costo")
     private Integer costo;
-
-    @Getter @Setter @Column(name = "tipdescuento")
-    private String tipdescuento;
-
-    @Getter @Setter @Column(name = "pordescuento")
-    private Integer pordescuento;
-
-    @Getter @Setter @Column(name = "aplidescuento")
-    private Character aplidescuento;
-
 }

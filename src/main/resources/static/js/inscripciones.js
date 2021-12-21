@@ -25,7 +25,7 @@ async function cargarInscripciones() {
 
         let inscripcionHtml = '<tr><td>' + inscripcion.id_inscripcion + '</td><td>' + inscripcion.cialumno + '</td><td>' + inscripcion.ciprofesor + '</td><td>'
             + inscripcion.materia + '</td><td>' + inscripcion.duracion + '</td><td>' + inscripcion.costo
-            + '</td><td>' + inscripcion.tipdescuento + '</td><td>' + inscripcion.pordescuento + '</td><td>' + inscripcion.aplidescuento + '</td><td>' + botonEliminar + botonEditar + '</td></tr>';
+            + '</td><td>' + botonEliminar + botonEditar + '</td></tr>';
         listadoHtml += inscripcionHtml;
     }
 

@@ -5,10 +5,6 @@ async function registrarInscripcion() {
     datos.materia = document.getElementById('txtmateria').value;
     datos.duracion = document.getElementById('txtduracion').value;
     datos.costo = document.getElementById('txtcosto').value;
-    datos.tipdescuento = document.getElementById('txttipdescuento').value;
-    datos.pordescuento = document.getElementById('txtpordescuento').value;
-    datos.aplidescuento = document.getElementById('txtaplidescuento').value;
-
 
     if (validar() == false) {
         return;
@@ -44,18 +40,6 @@ async function registrarInscripcion() {
         }
         if ($('#txtcosto').val().length == 0) {
             alert('Campo Obligatorio, por favor ingrese el Costo');
-            return false;
-        }
-        if ($('#txttipdescuento').val().length == 0) {
-            alert('Campo Obligatorio, por favor ingrese el Tipo de Descuento');
-            return false;
-        }
-        if ($('#txtpordescuento').val().length == 0) {
-            alert('Campo Obligatorio, por favor ingrese el Porcentaje del Descuento');
-            return false;
-        }
-        if ($('#txtaplidescuento').val().length == 0) {
-            alert('Campo Obligatorio, por favor ingrese si aplica el descuento');
             return false;
         }
         return true
